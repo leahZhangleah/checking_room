@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/passed_numbers_width"
+    android:layout_height="@dimen/passed_numbers_height"
+    xmlns:abs="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"> //android:background="@drawable/green_passed"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="过号"/>
+    <com.example.checking_room.SmoothScrollLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passed_scroll_layout"
+        abs:customSpanCount="2">
+    </com.example.checking_room.SmoothScrollLayout>
+</LinearLayout>
+</merge>

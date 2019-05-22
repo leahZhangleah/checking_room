@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/base_pic"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#59FFFFFF"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/logo_width"
+            android:layout_height="@dimen/logo_height"
+            android:src="@drawable/logo_03" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="古美儿童"
+            android:textSize="@dimen/hospital_name_size" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/second_base_pic"
+            android:orientation="vertical">
+
+            <!--RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/title_padding_left"
+                android:paddingRight="@dimen/title_padding_right">
+
+                <include layout="@layout/room_name"></include>
+
+                <TextView
+                    android:id="@+id/date_tv"
+                    android:layout_width="@dimen/date_text_width"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/date_bg"
+                    android:gravity="center"
+                    android:textColor="@android:color/holo_green_dark"
+                    tools:text="2019年3月12日星期二 10：10" />
+            </RelativeLayout-->
+
+            <!--include layout="@layout/label"></include-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/now_checking_numbers"></include>
+                    <include layout="@layout/passed_numbers"></include>
+                </LinearLayout>
+
+                <com.example.checking_room.SmoothScrollLayout
+                    android:id="@+id/waiting_scroll_layout"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="50dp"
+                    android:background="@drawable/waiting_zone_bg">
+                </com.example.checking_room.SmoothScrollLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/baby_width"
+            android:layout_height="@dimen/baby_height"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/baby_left" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="@style/Theme.Leanback" />
+    <style name="label_bg">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Headline</item>
+        <item name="android:textSize">@dimen/label_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/holo_orange_dark</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <!--item name="android:background">@drawable/yellow_label</item-->
+    </style>
+    <style name="now_checking_horizontal_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/horizontal_line_height</item>
+        <item name="android:background">@android:color/holo_green_dark</item>
+        <item name="android:layout_marginTop">@dimen/now_checking_horizontal_line_top_margin</item>
+    </style>
+
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/waiting_number"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="10号"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="@dimen/waiting_zone_text_size" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/waiting_name"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="XXX"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="@dimen/waiting_zone_text_size" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/waiting_room"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="体检室（104）"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="@dimen/waiting_zone_text_size"/>
+</LinearLayout>

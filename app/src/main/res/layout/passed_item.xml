@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:textColor="@android:color/darker_gray"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/passed_number"
+        tools:text="5号"/>
+    <TextView
+        android:textColor="@android:color/darker_gray"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/passed_name"
+        tools:text="XXX"/>
+    <TextView
+        android:textColor="@android:color/darker_gray"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:id="@+id/passed_status"
+        tools:text="过号"/>
+</LinearLayout>

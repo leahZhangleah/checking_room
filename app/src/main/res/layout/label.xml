@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/label_height"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="@dimen/label_horizontal_margin"
+    android:layout_marginRight="@dimen/label_horizontal_margin">
+    <TextView
+        style="@style/label_bg"
+        android:text="@string/label_room" />
+    <TextView
+        style="@style/label_bg"
+        android:text="@string/label_name" />
+    <TextView
+        style="@style/label_bg"
+        android:text="@string/label_waiting_zone" />
+</LinearLayout>
+</merge>
