@@ -3,4 +3,6 @@
     <string name="label_room">诊室</string>
     <string name="label_name">姓名</string>
     <string name="label_waiting_zone">等待区</string>
+    <string name="clinic_name">古美儿童</string>
+    <string name="passed_label">过号</string>
 </resources>

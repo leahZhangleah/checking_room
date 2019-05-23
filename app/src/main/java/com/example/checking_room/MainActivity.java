@@ -71,7 +71,38 @@ public class MainActivity extends AppCompatActivity {
         initSmoothScrollLayout();
         initPassedRv();
         initTTS();
-        connectTcpAndGetData();
+        //connectTcpAndGetData();
+        testWithDummyData();
+    }
+
+    private void testWithDummyData() {
+        waitmsgList.add(new Waitmsg("room1","child1","1"));
+        waitmsgList.add(new Waitmsg("room2","child2","2"));
+        waitmsgList.add(new Waitmsg("room3","child3","3"));
+
+        passedList.add(new Ghmsg("room1","child1","1"));
+        passedList.add(new Ghmsg("room2","child2","2"));
+        passedList.add(new Ghmsg("room3","child3","3"));
+
+        roomName1.setText("test room 1");
+        nowCheckingName1.setText("test child 1");
+        nowCheckingNumber1.setText("test No 1");
+
+        roomName2.setText("test room 2");
+        nowCheckingName2.setText("test child 2");
+        nowCheckingNumber2.setText("test No 2");
+
+        roomName3.setText("test room 3");
+        nowCheckingName3.setText("test child 3");
+        nowCheckingNumber3.setText("test No 3");
+
+        waitingRv.setData(waitmsgList);
+        passedRv.setData(passedList);
+
+        adoptAnimation(room1);
+        adoptAnimation(room2);
+        adoptAnimation(room3);
+
     }
 
     private void initDateView() {
@@ -314,11 +345,6 @@ public class MainActivity extends AppCompatActivity {
     private void initPassedRv() {
         passedRv = findViewById(R.id.passed_scroll_layout);
         passedList=new ArrayList<>();
-        passedList.add(new Ghmsg("诊室1","小朋友1","1"));
-        passedList.add(new Ghmsg("诊室1","小朋友2","2"));
-        passedList.add(new Ghmsg("诊室1","小朋友3","3"));
-        passedList.add(new Ghmsg("诊室1","小朋友4","4"));
-        //ghAdapter = new MyAdapter();
         passedRv.setData(passedList);
         //ghAdapter.setList(passedList);
     }
@@ -327,12 +353,6 @@ public class MainActivity extends AppCompatActivity {
         waitingRv = findViewById(R.id.waiting_scroll_layout);
         waitmsgList = new ArrayList<>();
         responses = new ArrayList<>();
-        //dumb test
-        waitmsgList.add(new Waitmsg("检查室1","小朋友1","5"));
-        waitmsgList.add(new Waitmsg("检查室1","小朋友2","6"));
-        waitmsgList.add(new Waitmsg("检查室1","小朋友3","7"));
-        waitmsgList.add(new Waitmsg("检查室1","小朋友4","8"));
-        waitmsgList.add(new Waitmsg("检查室1","小朋友5","9"));
         waitingRv.setData(waitmsgList);
     }
 

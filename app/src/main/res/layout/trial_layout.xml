@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="古美儿童"
+            android:text="@string/clinic_name"
             android:textSize="@dimen/hospital_name_size" />
     </LinearLayout>
 
@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="@android:color/holo_green_dark"
+            android:fontFamily="sans-serif"
             tools:text="2019年3月12日星期二 10：10" />
 
         <include layout="@layout/label"></include>
@@ -45,7 +46,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
+                android:layout_marginLeft="@dimen/checking_and_passed_zone_margin_left"
                 android:orientation="vertical">
                 <include layout="@layout/now_checking_numbers"></include>
                 <include layout="@layout/passed_numbers"></include>
@@ -53,9 +54,9 @@
 
             <com.example.checking_room.SmoothScrollLayout
                 android:id="@+id/waiting_scroll_layout"
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="50dp">
+                android:layout_width="@dimen/waiting_zone_width"
+                android:layout_height="@dimen/waiting_zone_height"
+                android:layout_marginRight="@dimen/waiting_zone_margin_right">
             </com.example.checking_room.SmoothScrollLayout>
         </LinearLayout>
     </LinearLayout>
