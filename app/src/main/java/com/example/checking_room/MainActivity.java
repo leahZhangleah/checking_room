@@ -2,6 +2,7 @@ package com.example.checking_room;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Message;
@@ -16,6 +17,8 @@ import android.text.Layout;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -203,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
                                 nowCheckingNumber1.setText(response.getPdhm()+"号");
                                 String name = changePatientName(response.getBrxm());
                                 nowCheckingName1.setText(name);
+                                adoptAnimation(room1);
                                 Waitmsg waitmsg1 = new Waitmsg(response.getFjmc(),response.getBrxm(),response.getPdhm());
                                 new VoiceThread(waitmsg1).start();
                                 //todo:check if it's same as last time, if not, send data to tts
@@ -213,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
                                 nowCheckingNumber2.setText(response.getPdhm()+"号");
                                 String name = changePatientName(response.getBrxm());
                                 nowCheckingName2.setText(name);
+                                adoptAnimation(room2);
                                 Waitmsg waitmsg2 = new Waitmsg(response.getFjmc(),response.getBrxm(),response.getPdhm());
                                 new VoiceThread(waitmsg2).start();
                                 waitmsgList.addAll(response.getWaitmsg());
@@ -222,6 +227,7 @@ public class MainActivity extends AppCompatActivity {
                                 nowCheckingNumber3.setText(response.getPdhm()+"号");
                                 String name = changePatientName(response.getBrxm());
                                 nowCheckingName3.setText(name);
+                                adoptAnimation(room3);
                                 Waitmsg waitmsg3 = new Waitmsg(response.getFjmc(),response.getBrxm(),response.getPdhm());
                                 new VoiceThread(waitmsg3).start();
                                 waitmsgList.addAll(response.getWaitmsg());
@@ -240,6 +246,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+
+    private void adoptAnimation(View view){
+        Animation blinkAnim = AnimationUtils.loadAnimation(this, R.anim.blink);
+        blinkAnim.restrictDuration(3000);
+        view.startAnimation(blinkAnim);
+    }
 
     private String changePatientName(String name){
         int lastLen = name.length();
