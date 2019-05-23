@@ -1,6 +1,7 @@
 package com.example.checking_room;
 
 import java.util.List;
+import java.util.Objects;
 
 public class CheckingRoomResponse {
     private String ysgh;
@@ -83,4 +84,26 @@ public class CheckingRoomResponse {
         return pdhm;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CheckingRoomResponse)) return false;
+        CheckingRoomResponse that = (CheckingRoomResponse) o;
+        return Objects.equals(getYsgh(), that.getYsgh()) &&
+                Objects.equals(getYsgy(), that.getYsgy()) &&
+                Objects.equals(getFjmc(), that.getFjmc()) &&
+                Objects.equals(getWaitmsg(), that.getWaitmsg()) &&
+                Objects.equals(getXpdz(), that.getXpdz()) &&
+                Objects.equals(getYsxm(), that.getYsxm()) &&
+                Objects.equals(getBrxm(), that.getBrxm()) &&
+                Objects.equals(getWc(), that.getWc()) &&
+                Objects.equals(getGhmsg(), that.getGhmsg()) &&
+                Objects.equals(getPdhm(), that.getPdhm());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getYsgh(), getYsgy(), getFjmc(), getWaitmsg(), getXpdz(), getYsxm(), getBrxm(), getWc(), getGhmsg(), getPdhm());
+    }
 }

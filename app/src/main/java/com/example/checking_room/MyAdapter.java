@@ -53,14 +53,33 @@ class ViewHolder<T> extends RecyclerView.ViewHolder {
         if(msg instanceof Waitmsg){
             Waitmsg waitmsg = (Waitmsg) msg;
             numberTv.setText(waitmsg.getPdhm()+"号");
-            nameTv.setText(waitmsg.getBrxm());//todo
+            String name=changePatientName(waitmsg.getBrxm());
+            nameTv.setText(name);
             roomTv.setText(waitmsg.getFjmc());
         }else if(msg instanceof Ghmsg){
             Ghmsg ghmsg = (Ghmsg) msg;
             numberTv.setText(ghmsg.getPdhm()+"号");
-            nameTv.setText(ghmsg.getBrxm());
+            String name=changePatientName(ghmsg.getBrxm());
+            nameTv.setText(name);
             roomTv.setText("过号");
         }
 
+    }
+
+    private String changePatientName(String name){
+        int lastLen = name.length();
+        if (name.contains("(") || name.contains("（")) {
+            lastLen = name.contains("(") ? name.indexOf("(") : name.indexOf("（");
+        }
+        switch (lastLen) {
+            case 2:
+            case 3:
+                name = name.substring(0, 1) + "*" + name.substring(lastLen-1, name.length()) ;
+                break;
+            case 4:
+                name = name.substring(0, 1) + "**" + name.substring(lastLen-1, name.length()) ;
+                break;
+        }
+        return name;
     }
 }

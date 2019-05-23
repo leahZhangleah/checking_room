@@ -1,5 +1,7 @@
 package com.example.checking_room;
 
+import java.util.Objects;
+
 public class Ghmsg {
 
     private String fjmc;
@@ -33,4 +35,18 @@ public class Ghmsg {
         return pdhm;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ghmsg)) return false;
+        Ghmsg ghmsg = (Ghmsg) o;
+        return Objects.equals(getFjmc(), ghmsg.getFjmc()) &&
+                Objects.equals(getBrxm(), ghmsg.getBrxm()) &&
+                Objects.equals(getPdhm(), ghmsg.getPdhm());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFjmc(), getBrxm(), getPdhm());
+    }
 }

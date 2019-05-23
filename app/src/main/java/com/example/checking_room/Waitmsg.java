@@ -1,5 +1,7 @@
 package com.example.checking_room;
 
+import java.util.Objects;
+
 public class Waitmsg {
 
     private String fjmc;
@@ -33,4 +35,18 @@ public class Waitmsg {
         return pdhm;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Waitmsg)) return false;
+        Waitmsg waitmsg = (Waitmsg) o;
+        return Objects.equals(getFjmc(), waitmsg.getFjmc()) &&
+                Objects.equals(getBrxm(), waitmsg.getBrxm()) &&
+                Objects.equals(getPdhm(), waitmsg.getPdhm());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFjmc(), getBrxm(), getPdhm());
+    }
 }
