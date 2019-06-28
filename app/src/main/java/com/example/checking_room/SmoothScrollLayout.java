@@ -79,6 +79,7 @@ public class SmoothScrollLayout<T> extends FrameLayout {
 
     public void smoothScroll() {
         recyclerView.smoothScrollBy(0, 5);
+
         mHandler.sendEmptyMessageDelayed(0, 100);
     }
 

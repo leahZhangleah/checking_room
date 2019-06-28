@@ -17,11 +17,18 @@ import android.text.Layout;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.checking_room.CheckingRoomResponse;
+import com.example.checking_room.Ghmsg;
+import com.example.checking_room.R;
+import com.example.checking_room.SmoothScrollLayout;
+import com.example.checking_room.Waitmsg;
 import com.google.gson.Gson;
 import com.lzy.okhttputils.OkHttpUtils;
 
@@ -63,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);//隐藏标题
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//设置成全屏模式
         setContentView(R.layout.trial_layout);
         dateTv = findViewById(R.id.date_tv);
         initPermission();
@@ -123,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                                 msg.what = 0x125;
                                 handler.sendMessage(msg);
                             }catch (InterruptedException e){
-                                Test(e,TIME_ERROR);
+                                //Test(e,TIME_ERROR);
                                 Log.e("read time error",e.getMessage());
                                 e.printStackTrace();
                             }
